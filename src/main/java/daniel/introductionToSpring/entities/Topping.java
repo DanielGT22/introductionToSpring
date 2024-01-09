@@ -8,23 +8,11 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @ToString
-public class Topping {
+public class Topping extends Prodotto{
     private String nome;
-    private int calorie;
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
+    public Topping(int calories, double price, String nome) {
+        super(calories, price);
         this.nome = nome;
-    }
-
-    public int getCalorie() {
-        return calorie;
-    }
-
-    public void setCalorie(int calorie) {
-        this.calorie = calorie;
     }
 }

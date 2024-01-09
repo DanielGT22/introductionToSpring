@@ -2,18 +2,25 @@ package daniel.introductionToSpring.entities;
 
 import lombok.*;
 
-@Data
+
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-public class Bibite {
-    private String nome;
-    private double prezzo;
-    private int calorie;
+
+public class Bibite  extends Prodotto{
+    private String name;
 
 
+    public Bibite(String name, int calories, double price) {
+        super(calories, price);
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Bibite{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
 
 

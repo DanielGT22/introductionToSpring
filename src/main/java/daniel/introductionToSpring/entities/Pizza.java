@@ -2,27 +2,30 @@ package daniel.introductionToSpring.entities;
 
 import lombok.*;
 
-@Data
+import java.util.List;
+
+
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-public class Pizza {
+public class Pizza  extends Prodotto{
     private String nome;
-    private double prezzo;
-    private int calorie;
 
-    private Topping pomodoro;
-
-    private Topping mozzarella;
+    private List<Topping> toppingList;
 
 
-    public Pizza(String nome, double prezzo, int calorie, Topping pomodoro, Topping mozzarella) {
+    public Pizza(int calories, double price, String nome, List<Topping> toppingList) {
+        super( 1021, 4.99 );
         this.nome = nome;
-        this.prezzo = prezzo;
-        this.calorie = calorie;
-        this.pomodoro = pomodoro;
-        this.mozzarella = mozzarella;
+        this.toppingList = toppingList;
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "nome='" + nome + '\'' +
+                ", toppingList=" + toppingList +
+                '}';
     }
 }
